@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <title>Bubble Sort</title>
+    <!--CSS Styling-->
+    <style>
+        body {background-color: gray;}
+        h1 {
+            margin-top: 0;
+		    text-align:center;
+		    text-shadow: 3px 2px red;
+		    font-weight:bold;
+		    font-size: 3vw;
+		    color: white;
+		    background-color: black;
+		
+        }
+
+        div {
+            text-align: center;
+			margin-top: 20px;
+        }
+        
+        text {fill: black;}
+        rect {fill: blue;}
+        .sorted {fill: white;}
+        .min {fill: red;}
+        .testing {fill: red;}
+
+        .button {
+            background-color: green;
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+
+        input[type=text] {
+            width: 300px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+        }
+
+        input[type=text]:focus {
+            border: 3px solid #555;
+            background-color: lightgray;
+        }
+        .button:hover {
+            background-color: red; /* Green */
+            color: white;
+        }
+        p {
+            font-size:1.5vw;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            float: center;
+        }
+</style>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body>
+    <h1> BUBBLE SORTING</h1>
+    <div>
+        <input type="text" id="myVal" placeholder="Add a number">			
+        <button class="button" id = "insert" onclick="func1()">Insert Data</button>
+        <button class="button" onclick = "createBarChart()"> Create Bar Chart</button>
+        <button class="button" onclick="bubbleSort()">Ascending Sort</button>
+        <button class="button" onclick="descSort()">Descending Sort</button>
+        <button class="button" onclick="reset()">Reset</button>
+        <p id="un-output">Unsorted Array: </p>
+        <p id="sort-output">Sorted Array: </p>
+    </div>
+    <!--Script to make the enter key functioning-->
+    <script>
+        var input = document.getElementById("myVal");
+        input.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13){
+                event.preventDefault();
+                document.getElementById("insert").click();
+            }
+        });
+    </script>
+    <!--Scripts included in the html-->
+    <div id="graph">
+        <script type="text/javascript" src="js/sort.js"></script>
+    </div>
+</body>

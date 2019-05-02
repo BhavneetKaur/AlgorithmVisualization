@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Binary Search Tree</title>
+	
+	<link rel="stylesheet" href="css/reset.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+    <!--CSS Styling-->
+	<style>
+		body {
+			background-color: gray;
+			font-family: "Times New Roman", Times, serif;
+		}
+		#header{
+		height: 50px;
+		text-align:center;
+		text-transform: uppercase;
+		text-shadow: 3px 2px red;
+		font-weight:bold;
+		font-size: 3vw;
+		color: white;
+		background-color: black;
+		padding-top: 10px;
+		}
+
+		#heading{
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		
+        .button {
+            background-color: green;
+            border: none;
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+
+        input[type=text] {
+            width: 300px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 3px solid #ccc;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+            outline: none;
+        }
+
+        input[type=text]:focus {
+            border: 3px solid #555;
+            background-color: lightgray;
+        }
+        .button:hover {
+            background-color: red; /* Green */
+            color: white;
+        }
+
+		p {
+            font-size:1.5vw;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
+            float: center;
+        }
+	</style>
+
+</head>
+
+<body>
+<div id="header">
+	<h1> Binary search tree </h1>
+</div>
+<div id = "heading">
+	<input type="text" id="myVal" placeholder="Add a number">			
+	<button class="button" id = "insert" onclick="func1()">Insert Data</button>
+	<button class="button" onclick="myfunction()">Clear Tree</button>
+	<p id = "inp" >Insertion Order: </p>
+</div>
+<!--Script to make the enter key functioning-->
+<script>
+        var input = document.getElementById("myVal");
+        input.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13){
+                event.preventDefault();
+                document.getElementById("insert").click();
+            }
+        });
+    </script>
+<!--Scripts included in the html-->
+<script type="text/javascript" src="js/d3.min.js"></script>
+<script type="text/javascript" src="js/binarysearchtree.js"></script>
+
+</body>
+
+</html>

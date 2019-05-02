@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Data Visualization Project</title>
+	
+	<link rel="stylesheet" href="css/reset.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
+
+	<script type="text/javascript" src="js/d3.min.js"></script>
+<!--CSS Style-->
+<style>
+
+body{
+	font-family: "Times New Roman", Times, serif;
+	background-color: gray;
+}
+#header {
+	height: 50px;
+	text-align:center;
+	text-transform: uppercase;
+	text-shadow: 3px 2px red;
+	font-weight:bold;
+	font-size: 3vw;
+	color: white;
+	background-color: black;
+	padding-top: 10px;
+
+}
+#bst {
+	float: left;
+}
+
+#sort {
+	float: right;
+}
+
+#bst, #sort {
+	width: 350px;
+	height: 400px;
+  	border: 10px solid black;
+  	padding: 25px;
+  	margin: 20px;
+	color: black;
+	font-weight:bold;
+	text-align: center;
+	font-size: 1.5vw;
+	background-color:green;
+	
+}
+#container {
+	width: 950px;
+	margin: auto;
+
+}
+</style>
+
+</head>
+
+<body>
+
+<div id = "header">
+<h1> Visualization Algorithms </h1>
+</div>
+<div id = "container">
+<div id = "bst" onclick ="location.href = 'index.html'" >
+<h3> BINARY SEARCH TREE </h3>
+</div>
+
+<div id = "sort" onclick ="location.href = 'sort.html'">
+<h3> BUBBLE SORT </h3>
+</div>
+</div>
+
+<script>
+
+	/*Function to wrap the text according to the width*/
+	/*Used this code from: https://stackoverflow.com/questions/24784302/wrapping-text-in-d3 */
+	function wrap(text, width) {
+        text.each(function () {
+            var text = d3.select(this),
+            words = text.text().split(/\s+/).reverse(),
+            word,
+            line = [],
+            lineNumber = 0,
+            lineHeight = 1.1, 
+            x = text.attr("x"),
+            y = text.attr("y"),
+            dy = 0, 
+            tspan = text.text(null)
+                        .append("tspan")
+                        .attr("x", x)
+                        .attr("y", y)
+                        .attr("dy", dy + "em");
+        while (word = words.pop()) {
+            line.push(word);
+            tspan.text(line.join(" "));
+            if (tspan.node().getComputedTextLength() > width) {
+                line.pop();
+                tspan.text(line.join(" "));
+                line = [word];
+                tspan = text.append("tspan")
+                            .attr("x", 0)
+                            .attr("y", y)
+                            .attr("dy", ++lineNumber * lineHeight + dy + "em")
+                            .text(word);
+            }
+        }
+    });
+	}
+
+	/*Content of the BST div*/
+	var svgContainer = d3.select("#sort").append("svg").attr("width",350).attr("height","500px");
+	svgContainer.append("image").attr("xlink:href","/images/bar1.png")
+		.attr("width",320).attr("height",270).style("text-align","center")
+		.on("mouseover", function(d){
+		 	d3.select(this).attr("xlink:href","/images/bar2.png")
+		}).on("mouseout", function(d){
+			d3.select(this).attr("xlink:href","/images/bar1.png")
+		});
+	svgContainer.append("text").text("Sorting is rearranging the values in a\
+		 specific order. There are different methods of sorting.\
+		  To have a look at the detailed sorting methods, please visit: \
+		  https://en.wikipedia.org/wiki/Sorting_algorithm")
+		  .style("color","black").attr("x",0).attr("y",280)
+		  .attr("width","300px").call(wrap,300);
+
+	/*Content of the Bubble Sort div*/
+	var svgContainer2 = d3.select("#bst").append("svg").attr("width","350").attr("height","500px");
+	svgContainer2.append("image").attr("xlink:href","/images/bst.png")
+		.attr("width",350).attr("height",250)
+		.on("mouseover", function(d){
+		 	d3.select(this).attr("xlink:href","/images/bst1.png")
+		}).on("mouseout", function(d){
+			d3.select(this).attr("xlink:href","/images/bst.png")
+		});
+	svgContainer2.append("text").text("Binary Search Tree is an algorithm which creates a sorted \
+	 or ordered binary tree and stores items in memory.\
+	  For further information, please visit\
+	   https://en.wikipedia.org/wiki/Binary_search_tree ")
+	   .style("color","black").attr("x",0).attr("y",270)
+	   .attr("width","300px").style("font-size",20).call(wrap,350);
+</script>
+
+</body>
+</html> 
