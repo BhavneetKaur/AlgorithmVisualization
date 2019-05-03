@@ -4,9 +4,11 @@ Algorithms are a fundamental learning tool to problem-solving. Whenever there is
 
 **1. Home Page of the Dashboard:** This is the entry point of the project. In this page, there are options to navigate to the respective algorithms to visualize. On clicking in the box of the respective algorithm, it is redirected to the respective algorithm page. Also, if the pointer is hovered over the image, a different image is rendered. hierarchy.html is the home page of the project.
 
-<p align="center">
+
   
 ![](/images/dashboard.png)
+<p align="center">
+  
 **Figure 1: Dashboard**
 
 </p>
