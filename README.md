@@ -4,7 +4,7 @@ Algorithms are a fundamental learning tool to problem-solving. Whenever there is
 
 **1. Home Page of the Dashboard:** This is the entry point of the project. In this page, there are options to navigate to the respective algorithms to visualize. On clicking in the box of the respective algorithm, it is redirected to the respective algorithm page. Also, if the pointer is hovered over the image, a different image is rendered. hierarchy.html is the home page of the project.
 
-![](https://github.com/BhavneetKaur/AlgorithmVisualization/images/dashboard.png)
+![](/images/dashboard.png)
 **Figure 1: Dashboard**
 
 **2. Binary Search Tree (Algorithm 1):** Once, the Binary Search Tree box is clicked, it is redirected to the BST page. In this page, there is one text box to enter the node of the tree to be created, and another to clear the tree and to start a new tree. Once a number is entered, it is appended to the tree. The first value entered is automatically the root of the tree, and the subsequent values entered are inserted into the tree according to the algorithm. 
