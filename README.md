@@ -6,12 +6,9 @@ Algorithms are a fundamental learning tool to problem-solving. Whenever there is
 
 
   
-![](/images/dashboard.png)
-<p align="center">
-  
-**Figure 1: Dashboard**
+![](/images/dashboard.png)  
+-> **Figure 1: Dashboard** <-
 
-</p>
 
 **2. Binary Search Tree (Algorithm 1):** Once, the Binary Search Tree box is clicked, it is redirected to the BST page. In this page, there is one text box to enter the node of the tree to be created, and another to clear the tree and to start a new tree. Once a number is entered, it is appended to the tree. The first value entered is automatically the root of the tree, and the subsequent values entered are inserted into the tree according to the algorithm. 
 
